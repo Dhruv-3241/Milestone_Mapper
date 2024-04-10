@@ -11,6 +11,9 @@ const ViewAllTasks = ({ state }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalContent, setModalContent] = useState("");
 
+  const [filteredTaskList, setFilteredTaskList] = useState([]);
+  const [filterPriority, setFilterPriority] = useState("all");
+
   const closeModal = () => {
     setModalVisible(false);
     setModalContent("");
@@ -111,6 +114,27 @@ const ViewAllTasks = ({ state }) => {
     allTasks();
   }, []);
 
+  useEffect(() => {
+    const filteredTasks = taskList.filter((task) => {
+      if (filterPriority === "all") {
+        return true;
+      } else if (filterPriority === "high") {
+        return task.isPriority;
+      } else {
+        return !task.isPriority;
+      }
+    });
+    setFilteredTaskList(filteredTasks);
+  }, [taskList, filterPriority]);
+
+  const handleFilterPriority = (event) => {
+    setFilterPriority(event.target.value);
+  };
+
+  const handleResetFilters = () => {
+    setFilterPriority("all");
+  };
+
   const animationRef = useRef(null);
 
   return (
@@ -119,88 +143,111 @@ const ViewAllTasks = ({ state }) => {
       <div className="container">
         <div className="view_all_tasks">
           <div className="tasks-container">
-            {taskList.map((task) => {
-              const isTaskCompleted = completedTasks.includes(task.taskId);
-              return (
-                <div
-                  className="view_all_tasks_card"
-                  key={task.id}
-                  style={
-                    task.id !== "" &&
-                    task.name !== "" &&
-                    task.description !== "" &&
-                    task.date !== "" &&
-                    task.isPriority !== ""
-                      ? {}
-                      : { display: "none" }
-                  }
+            <div className="filter-container">
+              <label className="cont3">
+                Filter by Priority:
+                <select
+                  className="diffnewbtn"
+                  value={filterPriority}
+                  onChange={handleFilterPriority}
                 >
+                  <option value="all">All</option>
+                  <option value="high">High</option>
+                  <option value="low">Low</option>
+                </select>
+              </label>
+              <div className="cont4">
+                <button className="diffnewbtn" onClick={handleResetFilters}>
+                  Reset Filters
+                </button>
+              </div>
+            </div>
+            <div className="cont2">
+              {filteredTaskList.map((task) => {
+                const isTaskCompleted = completedTasks.includes(task.taskId);
+                return (
                   <div
-                    className={`box3 ${isTaskCompleted ? "box3-expanded" : ""}`}
+                    className="view_all_tasks_card"
+                    key={task.id}
+                    style={
+                      task.id !== "" &&
+                      task.name !== "" &&
+                      task.description !== "" &&
+                      task.date !== "" &&
+                      task.isPriority !== ""
+                        ? {}
+                        : { display: "none" }
+                    }
                   >
-                    <div className="label">
-                      {isTaskCompleted && (
-                        <Lottie
-                          className="lottie"
-                          onComplete={() => {
-                            animationRef.current?.setDirection(-1);
-                            animationRef.current?.play();
-                          }}
-                          lottieref={animationRef}
-                          loop={true}
-                          animationData={animation}
+                    <div
+                      className={`box3 ${
+                        isTaskCompleted ? "box3-expanded" : ""
+                      }`}
+                    >
+                      <div className="label">
+                        {isTaskCompleted && (
+                          <Lottie
+                            className="lottie"
+                            onComplete={() => {
+                              animationRef.current?.setDirection(-1);
+                              animationRef.current?.play();
+                            }}
+                            lottieref={animationRef}
+                            loop={true}
+                            animationData={animation}
+                          />
+                        )}
+                      </div>
+                    </div>
+                    <div
+                      className={`box1 ${
+                        isTaskCompleted ? "box1-expanded" : "box1"
+                      }`}
+                    >
+                      <p>Task Id: {task.taskId}</p>
+                      <p>Task Name: {task.name}</p>
+                      <p>Task Description: {task.description}</p>
+                      <p>Task Date: {task.date}</p>
+                      <p>Task Priority: {task.isPriority ? "High" : "Low"}</p>
+                      <br />
+                    </div>
+                    <div
+                      className={`box2 ${
+                        isTaskCompleted ? "box2-expanded" : "box2"
+                      }`}
+                    >
+                      <button
+                        className="newbtn"
+                        onClick={(event) =>
+                          updateTask(event, task.taskId, task.name, task.date)
+                        }
+                      >
+                        Update
+                      </button>
+                      <button
+                        className="newbtn"
+                        onClick={(event) => deleteTask(event, task.taskId)}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                    <div
+                      className="box4"
+                      onClick={() => toggleTaskCompletion(task.taskId)}
+                    >
+                      <div className="checkbox-wrapper-11">
+                        <input
+                          id="02-11 iscompleted"
+                          type="checkbox"
+                          checked={completedTasks.includes(task.taskId)}
                         />
-                      )}
+                        <label htmlFor="02-11">Task Pending</label>
+                      </div>
                     </div>
                   </div>
-                  <div
-                    className={`box1 ${
-                      isTaskCompleted ? "box1-expanded" : "box1"
-                    }`}
-                  >
-                    <p>Task Id: {task.taskId}</p>
-                    <p>Task Name: {task.name}</p>
-                    <p>Task Description: {task.description}</p>
-                    <p>Task Date: {task.date}</p>
-                    <p>Task Priority: {task.isPriority ? "High" : "Low"}</p>
-                    <br />
-                  </div>
-                  <div
-                    className={`box2 ${
-                      isTaskCompleted ? "box2-expanded" : "box2"
-                    }`}
-                  >
-                    <button
-                      className="newbtn"
-                      onClick={(event) =>
-                        updateTask(event, task.taskId, task.name, task.date)
-                      }
-                    >
-                      Update
-                    </button>
-                    <button
-                      className="newbtn"
-                      onClick={(event) => deleteTask(event, task.taskId)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                  <div
-                    className="box4"
-                    onClick={() => toggleTaskCompletion(task.taskId)}
-                  >
-                    <div className="checkbox-wrapper-11">
-                      <input
-                        id="02-11 iscompleted"
-                        type="checkbox"
-                        checked={completedTasks.includes(task.taskId)}
-                      />
-                      <label htmlFor="02-11">Task Pending</label>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
         {modalVisible && (
