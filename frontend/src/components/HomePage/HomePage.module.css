@@ -1,0 +1,466 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    145deg,
+    rgb(230, 170, 170) 0%,
+    rgb(185, 105, 105) 50%,
+    rgb(142, 82, 82) 100%
+  );
+}
+
+.container .leftnav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 15vw;
+  /* background-color: red; */
+  float: left;
+}
+
+.container .leftnav .part1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 25%;
+  width: 100%;
+  padding: 10px;
+  /* background-color: pink; */
+}
+
+.container .leftnav .part1 .logoimg {
+  width: 100%;
+  height: 80%;
+  /* background-color: black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-bottom: 25px; */
+  background-blend-mode: color-burn;
+}
+
+.container .leftnav .part1 .logoimg img {
+  width: 100%;
+  height: 100%;
+  /* background-color: black; */
+}
+
+.container .leftnav .part1 .title h3 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.15em;
+  font-weight: bolder;
+}
+
+.container .leftnav .part2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 50%;
+  width: 100%;
+  /* background-color: grey; */
+}
+
+.container .leftnav .part2 .section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 7.5%;
+  width: 90%;
+  /* background-color: lightblue; */
+}
+
+.container .leftnav .part2 .section .icon {
+  width: 15%;
+  height: 85%;
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.container .leftnav .part2 .section .icon img {
+  width: 85%;
+  height: 100%;
+  /* background-color: black; */
+}
+
+.container .leftnav .part2 .section .page {
+  width: 65%;
+  height: 85%;
+  /* background-color: blue; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.container .leftnav .part2 .section .page a {
+  text-decoration: none;
+  color: black;
+}
+
+.container .leftnav .part2 .section .page .hbtn {
+  width: 75%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.container .leftnav .part2 .section .page .hbtn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.container .leftnav .part2 .section .page .hbtn:hover::before {
+  transform: scaleX(1);
+}
+
+.container .leftnav .part2 .section .page p {
+  font-weight: 400;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.container .leftnav .part2 .section .page1 {
+  width: 100%;
+  height: 85%;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .leftnav .part3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 15%;
+  width: 100%;
+  /* background-color: yellow; */
+}
+
+.container .leftnav .part3 .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 35%;
+  width: 100%;
+  /* background-color: grey; */
+}
+
+.container .leftnav .part3 .options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 65%;
+  width: 100%;
+  cursor: pointer;
+  /* background-color: blue; */
+}
+
+.container .leftnav .part3 .options ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container .leftnav .part3 .options li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50%;
+  width: 100%;
+  /* background-color: red; */
+  gap: 20px;
+}
+
+.container .leftnav .part3 .options img {
+  width: 25%;
+  height: 55%;
+  /* background-color: #000000; */
+}
+
+.container .leftnav .part3 .options .help {
+  width: 15%;
+  height: 55%;
+}
+
+.container .leftnav .part3 .setting p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15em;
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container .center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 85vw;
+  /* background-color: blue; */
+}
+
+.container .center .headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 15%;
+  width: 100%;
+  /* background-color: blue; */
+}
+
+.container .center .headline p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 2.5em;
+  font-weight: bolder;
+  color: black;
+}
+
+.container .center .tagline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+  width: 100%;
+  /* background-color: green; */
+}
+
+.container .center .tagline p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: black;
+}
+
+.container .center .animation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+  width: 100%;
+  /* background-color: red; */
+}
+
+.container .center .animation .leftpart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 50%;
+  /* background-color: black; */
+  float: right;
+}
+
+.container .center .animation .leftpart .aboutus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 50%;
+  width: 100%;
+  /* background-color: purple; */
+  padding: 16px;
+}
+
+.container .center .animation .leftpart .aboutus h2 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: black;
+}
+
+.container .center .animation .leftpart .aboutus p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.25em;
+  font-weight: 300;
+  color: black;
+}
+
+.container .center .animation .leftpart .link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  /* background-color: pink; */
+  padding: 32px;
+}
+
+.container .center .animation .leftpart .link p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 44px;
+}
+
+.container .center .animation .leftpart .link a {
+  text-decoration: none;
+  color: white;
+}
+
+.container .center .animation .leftpart .link .btn {
+  padding: 1.3em 3em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.container .center .animation .leftpart .link .btn:hover {
+  background-color: #752f2a;
+  box-shadow: 0px 15px 20px rgba(139, 56, 31, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.container .center .animation .leftpart .link .btn:active {
+  transform: translateY(-1px);
+}
+
+.container .center .animation .rightpart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+  /* background-color: orange; */
+  float: left;
+}
+
+.customStyles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  /* background-color: yellow; */
+}
+
+@media screen and (max-width: 1024px){
+  .container .leftnav{
+    width: 25vw;
+  }
+
+  .container .center{
+    padding: 16px;
+  }
+}
+
+
+@media screen and (max-width: 768px){
+  .container .leftnav{
+    width: 25vw;
+  }
+  
+  .container .leftnav .part1 .logoimg{
+    height: 40%;
+  }
+
+  .container .leftnav .part2 .section .icon{
+    height: 80%;
+    width: 15%;
+  }
+
+  .container .leftnav .part2 .section .page p{
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .container .center{
+    padding: 16px;
+  }
+
+  .container .center .headline p{
+    font-size: 1.5em;
+  }
+
+  .container .center .tagline{
+    font-size: 10px;
+  }
+
+  .container .center .leftpart .link{
+    font-size: 10px;
+    font-weight: 200;  
+  }
+
+  .container .center .animation{
+    flex-direction: column;
+    padding-top: 35px;
+  }
+
+  .container .center .animation .leftpart{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .container .leftnav{
+    width: 50vw;
+  }
+  
+  .container .leftnav .part2 .section .page p{
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  .container .animation .rightpart{
+    height: 40%;
+  }
+
+  .container .center .animation .leftpart .link .btn{
+    font-size: 0.9em;
+  }
+
+}
