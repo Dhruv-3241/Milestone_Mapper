@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Declaring the PORT number on which the server will run
-const PORT = 3000;
+const PORT = 4000;
 //Telling the server to listen on the PORT number declared above
 app.listen(PORT, '0.0.0.0', ()=> {
   console.log(`Server Running At PORT ${PORT}`);
