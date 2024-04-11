@@ -21,7 +21,7 @@ const DeleteTask = ({ state }) => {
     try {
       //We are making this request to the server only to check whether the task cane be deleted or not that is the task name consists of the word "priority" or not.
       const res = await fetch(
-        `http://localhost:3000/api/ethereum/delete-task/${taskID}`,
+        `https://mentor-dash.onrender.com/api/ethereum/delete-task/${taskID}`,
         {
           method: "DELETE",
           headers: {

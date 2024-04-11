@@ -26,7 +26,7 @@ const ViewAllTasks = ({ state }) => {
 
     try {
       const res = await fetch(
-        "http://localhost:3000/api/ethereum/update-task",
+        "https://mentor-dash.onrender.com/api/ethereum/update-task",
         {
           method: "POST",
           headers: {
@@ -58,7 +58,7 @@ const ViewAllTasks = ({ state }) => {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/api/ethereum/delete-task/${taskId}`,
+        `https://mentor-dash.onrender.com/api/ethereum/delete-task/${taskId}`,
         {
           method: "DELETE",
           headers: {
@@ -94,7 +94,7 @@ const ViewAllTasks = ({ state }) => {
     const allTasks = async () => {
       try {
         const res = await fetch(
-          "http://localhost:3000/api/ethereum/view-all-tasks",
+          "https://mentor-dash.onrender.com/api/ethereum/view-all-tasks",
           {
             method: "GET",
             headers: {

@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require("cors");
 //Declaring the variable tasks which will load the routes from the routes.js file
 const tasks = require("./routes/routes");
+const bodyParser = require('body-parser');
 //Creating an instance of the express framework and storing it in the variable "app"
 const app = express();
 
@@ -18,10 +19,13 @@ app.use(express.json());
 //Using the tasks route to handle the incoming requests
 app.use("/api/ethereum", tasks);
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 //Declaring the PORT number on which the server will run
 const PORT = 3000;
 //Telling the server to listen on the PORT number declared above
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', ()=> {
   console.log(`Server Running At PORT ${PORT}`);
 });
 

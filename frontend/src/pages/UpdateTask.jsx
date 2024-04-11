@@ -23,7 +23,7 @@ const UpdateTask = ({ state }) => {
     try {
       //We are making this request to the server only to check whether there is a date clash (the value of the date after updation should not clash with an already existing date) or not for the given task to be updated.
       const res = await fetch(
-        "http://localhost:3000/api/ethereum/update-task",
+        "https://mentor-dash.onrender.com/api/ethereum/update-task",
         {
           method: "POST",
           headers: {
