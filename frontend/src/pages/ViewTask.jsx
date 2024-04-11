@@ -19,7 +19,7 @@ const ViewTask = () => {
       event.preventDefault();
       const taskID = document.querySelector("#taskID").value;
       const res = await fetch(
-        `https://mentor-dash.onrender.com/api/ethereum/view-task/${taskID}`,
+        `https://milestone-mapper.onrender.com/api/ethereum/view-task/${taskID}`,
         {
           method: "GET",
           headers: {

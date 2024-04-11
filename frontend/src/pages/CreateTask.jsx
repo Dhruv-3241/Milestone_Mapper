@@ -26,7 +26,7 @@ const CreateTask = ({ state }) => {
       //Keep in mind that this checking can be done through the smart contract itself its just that we do not want to spend gas on this.
       //We must keep in mind that since we performing such checking on the server end thats why we are pinging the server otherwise the task can be added directly through the smart contract without pinging the server.
       const res = await fetch(
-        "https://mentor-dash.onrender.com/api/ethereum/create-task",
+        "https://milestone-mapper.onrender.com/api/ethereum/create-task",
         {
           method: "POST",
           headers: {
