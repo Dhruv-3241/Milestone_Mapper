@@ -1,7 +1,7 @@
 //Declaring that we will be using the Express Framework of node.js
 const express = require("express");
 //Declaring that we will be using cors for cross-origin requests
-const cors = require("cors");
+const cors = require('cors');
 //Declaring the variable tasks which will load the routes from the routes.js file
 const tasks = require("./routes/routes");
 const bodyParser = require('body-parser');
@@ -13,7 +13,11 @@ const app = express();
 //user-/api/ethereum/create-task -> server.js -> routes.js -> controller.js -> tasks.js
 
 //Using the cors middleware to allow cross-origin requests
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 //Using the express.json() middleware to parse the incoming request body
 app.use(express.json());
 //Using the tasks route to handle the incoming requests
