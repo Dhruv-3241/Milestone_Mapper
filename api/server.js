@@ -8,12 +8,27 @@ const bodyParser = require('body-parser');
 //Creating an instance of the express framework and storing it in the variable "app"
 const app = express();
 
+const corsOptions = {
+  origin: function (origin, callback) {
+    const allowedOrigins = ['http://localhost:5173', 'https://milestone-mapper.onrender.com'];
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
 //Data Flow/Request Flow in the application:
 
 //user-/api/ethereum/create-task -> server.js -> routes.js -> controller.js -> tasks.js
 
 //Using the cors middleware to allow cross-origin requests
-app.use(cors());
+app.use(cors(corsOptions));
 //Using the express.json() middleware to parse the incoming request body
 app.use(express.json());
 
