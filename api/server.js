@@ -14,7 +14,7 @@ const app = express();
 
 //Using the cors middleware to allow cross-origin requests
 app.use(cors({
-  origin: 'https://milestone-mapper.onrender.com',
+  origin: 'http://localhost:5173',
   methods: ['GET', 'POST', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
