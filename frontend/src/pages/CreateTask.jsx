@@ -36,7 +36,7 @@ const CreateTask = ({ state }) => {
           body: JSON.stringify({ taskDate: taskDate }),
         }
       );
-      // console.log("Account is " + account);
+      console.log("Account is " + account);
       //Here the data variable contains only the response of the server suggesting whether there is a clash in dates or not.
       const data = await res.json();
       if (data.status === 200) {

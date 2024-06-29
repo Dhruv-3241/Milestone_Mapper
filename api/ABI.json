@@ -1,5 +1,46 @@
 [
 	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_taskName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_date",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_isPriority",
+				"type": "string"
+			}
+		],
+		"name": "createTask",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_taskId",
+				"type": "uint256"
+			}
+		],
+		"name": "deleteTask",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
@@ -56,6 +97,39 @@
 		"type": "event"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_taskId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_taskName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_date",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_isPriority",
+				"type": "string"
+			}
+		],
+		"name": "updateTask",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "allTask",
 		"outputs": [
@@ -82,91 +156,17 @@
 						"type": "string"
 					},
 					{
-						"internalType": "bool",
+						"internalType": "string",
 						"name": "isPriority",
-						"type": "bool"
+						"type": "string"
 					}
 				],
-				"internalType": "struct ToDo.Task[]",
+				"internalType": "struct Milestone_Mapper.Task[]",
 				"name": "",
 				"type": "tuple[]"
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_taskName",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_description",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_date",
-				"type": "string"
-			},
-			{
-				"internalType": "bool",
-				"name": "_isPriority",
-				"type": "bool"
-			}
-		],
-		"name": "createTask",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_taskId",
-				"type": "uint256"
-			}
-		],
-		"name": "deleteTask",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_taskId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_taskName",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_description",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_date",
-				"type": "string"
-			},
-			{
-				"internalType": "bool",
-				"name": "_isPriority",
-				"type": "bool"
-			}
-		],
-		"name": "updateTask",
-		"outputs": [],
-		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -202,12 +202,12 @@
 						"type": "string"
 					},
 					{
-						"internalType": "bool",
+						"internalType": "string",
 						"name": "isPriority",
-						"type": "bool"
+						"type": "string"
 					}
 				],
-				"internalType": "struct ToDo.Task",
+				"internalType": "struct Milestone_Mapper.Task",
 				"name": "",
 				"type": "tuple"
 			}
