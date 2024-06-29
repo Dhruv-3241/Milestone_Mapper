@@ -82,12 +82,12 @@
 						"type": "string"
 					},
 					{
-						"internalType": "bool",
+						"internalType": "string",
 						"name": "isPriority",
-						"type": "bool"
+						"type": "string"
 					}
 				],
-				"internalType": "struct ToDo.Task[]",
+				"internalType": "struct Milestone_Mapper.Task[]",
 				"name": "",
 				"type": "tuple[]"
 			}
@@ -113,9 +113,9 @@
 				"type": "string"
 			},
 			{
-				"internalType": "bool",
+				"internalType": "string",
 				"name": "_isPriority",
-				"type": "bool"
+				"type": "string"
 			}
 		],
 		"name": "createTask",
@@ -159,9 +159,9 @@
 				"type": "string"
 			},
 			{
-				"internalType": "bool",
+				"internalType": "string",
 				"name": "_isPriority",
-				"type": "bool"
+				"type": "string"
 			}
 		],
 		"name": "updateTask",
@@ -202,12 +202,12 @@
 						"type": "string"
 					},
 					{
-						"internalType": "bool",
+						"internalType": "string",
 						"name": "isPriority",
-						"type": "bool"
+						"type": "string"
 					}
 				],
-				"internalType": "struct ToDo.Task",
+				"internalType": "struct Milestone_Mapper.Task",
 				"name": "",
 				"type": "tuple"
 			}
