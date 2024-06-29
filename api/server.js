@@ -16,11 +16,12 @@ const app = express();
 app.use(cors());
 //Using the express.json() middleware to parse the incoming request body
 app.use(express.json());
-//Using the tasks route to handle the incoming requests
-app.use("/api/ethereum", tasks);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+//Using the tasks route to handle the incoming requests
+app.use("/api/ethereum", tasks);
 
 //Declaring the PORT number on which the server will run
 const PORT = 4000;
