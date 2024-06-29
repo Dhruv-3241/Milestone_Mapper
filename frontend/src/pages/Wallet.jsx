@@ -15,13 +15,13 @@ const Wallet = ({ saveState }) => {
           method: "eth_requestAccounts",
         });
 
-        // console.log(web3, accounts);
+        console.log(web3, accounts);
         
         //The contract Address has also been stored in the FrontEnd portion in contract.js
-        const contractAddress = "0xed37b202f1b77e15522f3b936d88e2be8111dd0b";
+        const contractAddress = "0x36cfab9f6251cb4F8A8e2196C410752D7c1B6802";
         const contract = new web3.eth.Contract(ABI, contractAddress);
 
-        // console.log(contract);
+        console.log(contract);
 
         //We are saving the accounts[0] in the account variable as we are only using the first account present in the accounts array (return type is array)
         saveState({ web3: web3, contract: contract, account: accounts[0] });
