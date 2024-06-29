@@ -12,14 +12,10 @@ const app = express();
 
 //user-/api/ethereum/create-task -> server.js -> routes.js -> controller.js -> tasks.js
 
+//Using the cors middleware to allow cross-origin requests
+app.use(cors);
 //Using the express.json() middleware to parse the incoming request body
 app.use(express.json());
-//Using the cors middleware to allow cross-origin requests
-app.use(cors({
-  origin: 'http://localhost:5173',
-  methods: ['GET', 'POST', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
 //Using the tasks route to handle the incoming requests
 app.use("/api/ethereum", tasks);
 
