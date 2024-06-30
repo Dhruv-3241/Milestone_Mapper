@@ -18,7 +18,7 @@ const Wallet = ({ saveState }) => {
         console.log(accounts);
         
         //The contract Address has also been stored in the FrontEnd portion in contract.js
-        const contractAddress = "0x193067c5287bd203f1458b2b437087a4b1db02f0";
+        const contractAddress = "0xc52cc9e7e91a93352671c3addf65e668ac766ac5";
         const contract = new web3.eth.Contract(ABI, contractAddress);
 
         // console.log(contract);
