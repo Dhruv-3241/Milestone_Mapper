@@ -13,7 +13,7 @@ const web3 = new Web3(
 
 //Storing the Contact Address through which our contract has been deployed
 //The contract Address has also been stored in the FrontEnd portion in Wallet.jsx
-const contractAddress = "0x91917ebcf580c07af8e1f3d8376194c85e676e9b";
+const contractAddress = "0x433868bf87a7e0606aab29c0199f84626da0d127";
 
 //Creating an instance of our contract on the server side
 const contract = new web3.eth.Contract(ABI, contractAddress);
